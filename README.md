@@ -1,22 +1,22 @@
-# Welcome to the farmdrop technical test for automation testers
+## Installation instructions:
+Install google chrome
 
-Please spend no more than two hours on the following task. You are not expected to finish all of it - this is as much to understand how you approach things as it is to see if you can build working tests.
+Install rvm: 
+follow instructions at https://rvm.io/
 
-## Background
-Farmdrop sometimes uses a staging site at [https://staging-web.farmdrop.com](https://staging-web.farmdrop.com) to run integration tests.  The database is reset periodically and the payments system is connected to a sandbox, so you can experiment freely.
+Install ruby 2.4.2:
+rvm install 2.4.2
 
-## Task
-Please build a suite of tests for the sign up form which will run against this staging site.
+Install bundler:
+gem install bundler
 
-1. Write out a series of scenarios as a Cucumber feature file(s). Try to think from regression prospective and come up with as many scenarios as you feel are appropriate in order to make sure this form is fully tested.
-2. Begin to automate your scenarios and continue until your allocated time runs out. Use Cucumber/Ruby and any other gems/frameworks you feel are appropriate.
+Install gems:
+cd interview_automation_test
+bundle install
+
+## Running instructions:
+(from root of project)
+cucumber --tags ~@wip
 
 ## Notes
-* Code reuse is important to us, so we are interested in seeing what approaches you take to keep your code and tests modular.
-* Can you show an approach to handle multiple browsers(headless,chrome should do) as well.
-* Your submission should include instructions on how to run it.
-
-## Submission
-Please fork this repository and commit code to it. Send us the link to your repo in an email.
-
-Good Luck!!!
+Hands up - I went a bit over the 2 hour limit - I wouldn't be able to sleep at night if I hadn't checked in at least one working test! There's obviously a few things I would improve if I had more time - probably the separate modules for elements - generally at my current company we use more of a SitePrism style approach, but I thought it would be over-engineering to implement this for just two pages! Also, I didn't waste time trying to implement headless tests because I have no experience with this. My approach if I was doing this in sprint, would be to implement the tests for chrome, as MVP, and then maybe make a separate technical task for the headless version of the tests, when I have time to investigate how to do it properly. 
